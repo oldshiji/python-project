@@ -1,0 +1,131 @@
+{% extends '../default/base.html' %}
+
+{% block title %}助手管理{% end %}
+
+{% block body %}
+<div class="col m-t-lg">
+    <div class="bg-light lter b-b wrapper-md">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <h1 class="m-n font-thin h4 text-black">小助手管理列表</h1>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-md ng-scope">
+        <div class="form-horizontal ng-valid ng-dirty">
+            <div>
+                <a class="btn m-b-xs w-xs btn-success btn-rounded" href="javascript:void(0)" onclick="registerHelper()">注册助手</a>
+                <!--<a class="btn m-b-xs w-xs btn-info btn-rounded" href="javascript:void(0)" onclick="delete_article()">删除</a>-->
+                <!--<a class="btn m-b-xs w-xs btn-warning btn-rounded" href="javascript:void(0)" onclick="reload_page()">刷新</a>-->
+            </div>
+            <div class="panel panel-default m-t-md">
+                <div class="table-responsive">
+                    <table class="table table-striped b-t b-light">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>助手微信标识</th>
+                            <th>昵称</th>
+                            <th>创建时间</th>
+                            <th>状态</th>
+                            <th>是否分配</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in results %}
+                        <tr>
+                            <td>{{ item.HelperId }}</td>
+                            <td>{{ item.HelperUin }}</td>
+                            <td>{{ item.NickName }}</td>
+                            <td>{{ item.CreateTime.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                            {% if item.Status == 1 %}
+                            <td>正常</td>
+                            {% elif item.Status == 2 %}
+                            <td>离线</td>
+                            {% else %}
+                            <td>未知</td>
+                            {% end %}
+                            {% if item.Allocation == 1 %}
+                            <td>已分配</td>
+                            {% elif item.Allocation == 0 %}
+                            <td>未分配</td>
+                            {% else %}
+                            <td>未知</td>
+                            {% end %}
+                            <td>
+                                <button class="btn m-b-xs btn-sm btn-info btn-addon"
+                                        onclick="clear_allocation('{{ item.HelperUin }}')">
+                                    <i class="fa fa-home"></i>清空分配
+                                </button>
+                            </td>
+                        </tr>
+                        {% end %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <nav class="text-center m-t-lg m-b-lg">
+                {% module Paginator(page_index, page_size, total_count) %}
+            </nav>
+        </div>
+    </div>
+</div>
+{% end %}
+
+{% block js_scripts %}
+<script type="text/javascript">
+    $(function () {
+
+    });
+
+    function clear_allocation(helperUin) {
+        if (confirm("确定清空该助手分配信息?")) {
+            $.post('{{ reverse_url("clear_allocation") }}',
+                {
+                    "helper_uin": helperUin
+                },
+                function (data) {
+                    if (data.code == 1) {
+                        alert("清空成功!");
+                        location.reload();
+                    } else {
+                        alert("清空失败!");
+                    }
+                });
+
+        }
+
+    }
+
+    /**
+     * 注册助手
+     */
+    function registerHelper() {
+        $.post('{{ reverse_url("register_helper") }}',
+            {},
+            function (data) {
+                if (data.code == 1) {
+                    // 请求成功, 轮询获取二维码
+                    var timer1 = setInterval(function(){
+                            $.get('{{ reverse_url("register_helper") }}', {mark: data.mark}, function (data) {
+                                if (data.code == 1){
+                                    if (data.msg){
+                                        window.open("http://101.132.245.172:8090" + data.msg, "_blank");
+                                        clearTimeout(timer1);
+                                    }
+                                }else{
+                                    alert(data.msg);
+                                    clearTimeout(timer1);
+                                }
+                            });
+                        },1000);
+                } else {
+                    alert("请求失败!");
+                }
+            });
+    }
+
+</script>
+{% end %}

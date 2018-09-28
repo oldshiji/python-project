@@ -1,0 +1,38 @@
+{% if page_count > 1 %}
+{#<div>#}
+    <ul class="pagination">
+        {% if 1 != page_index %}
+        <li><a href="{{ get_page_url(1) }}">页首</a></li>
+        {% else %}
+        <li class="disabled"><span>页首</span></li>
+        {% end %}
+
+        {% if previous %}
+        <li><a href="{{ get_page_url(previous) }}">&laquo;</a></li>
+        {% else %}
+        <li class="disabled"><span>&laquo;</span></li>
+        {% end %}
+
+        {# 1-index range #}
+        {% for page_num in display_range %}
+        {% if page_num != page_index %}
+        <li><a href="{{ get_page_url(page_num) }}">{{ page_num }}</a></li>
+        {% else %}
+        <li class="active"><span>{{ page_num }}</span></li>
+        {% end %}
+        {% end %}
+
+        {% if next %}
+        <li><a href="{{ get_page_url(next) }}">&raquo;</a></li>
+        {% else %}
+        <li class="disabled"><span>&raquo;</span></li>
+        {% end %}
+
+        {% if page_count != page_index %}
+        <li><a href="{{ get_page_url(page_count) }}">页尾</a></li>
+        {% else %}
+        <li class="disabled"><span>页尾</span></li>
+        {% end %}
+    </ul>
+{#</div>#}
+{% end %}

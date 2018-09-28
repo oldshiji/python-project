@@ -1,0 +1,91 @@
+<div>
+    <a id="addfield" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="margin:10px;">添加字段</a>
+    <a id="savefield" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="margin:10px;">保存</a>
+</div>
+<div style="margin:10px;">
+     <table id="fieldList"></table>
+</div>
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        var field_option = false;
+
+        $("#addfield").click(function(){
+
+            if(!field_option){
+                    $('#fieldList').datagrid('insertRow',{
+                    index: 0,	// 索引从0开始
+                    row: {
+
+                    }
+                    });
+            }else{
+                $.messager.alert("提示","请先编辑","warning");
+            }
+
+
+            $("#fieldList").datagrid("beginEdit",0);
+            field_option = true;
+
+        });
+
+        $("#savefield").click(function(e){
+            $("#fieldList").datagrid("endEdit",0);
+        });
+    })
+
+    $('#fieldList').datagrid({
+        //url:'datagrid_data.json',
+        columns:[[
+            {
+                field:'field_name',
+                title:'字段名称',
+                width:100,
+                editor:{
+                    type:'validatebox',
+                    options:{
+                        required:true,
+                    },
+                }
+            },
+            {
+                field:'field_type',
+                title:'字段类型',
+                width:100,
+                editor:{
+                    type:'combobox',
+                    options:{
+                        required:true,
+                        valueField: 'field_type',
+                        textField: 'value',
+                        data: [{
+                            label: 'field_type',
+                            value: '字符串'
+                        },{
+                            label: 'field_type',
+                            value: '数值'
+                        }]
+                    },
+                }
+            },
+            {
+                field:'field_key',
+                title:'字段',
+                width:100,
+                editor:{
+                    type:'validatebox',
+                    options:{
+                        required:true,
+                    },
+                }
+            },
+        ]],
+        onAfterEdit:function(rowIndex, rowData, changes){
+            console.log(rowData);
+        },
+    });
+
+</script>

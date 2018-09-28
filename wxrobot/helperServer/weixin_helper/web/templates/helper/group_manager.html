@@ -1,0 +1,101 @@
+{% extends '../default/base.html' %}
+
+{% block title %}群信息维护{% end %}
+
+{% block body %}
+<!-- welcome -->
+
+<div class="col m-t-lg">
+    <div class="bg-light lter b-b wrapper-md">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <h1 class="m-n font-thin h4 text-black">群信息维护</h1>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-md ng-scope">
+        <div class="form-horizontal ng-valid ng-dirty">
+            <div>
+                <!--<a class="btn m-b-xs w-xs btn-success btn-rounded" href="javascript:void(0)" onclick="modify_article()">编辑</a>-->
+                <!--<a class="btn m-b-xs w-xs btn-info btn-rounded" href="javascript:void(0)" onclick="delete_article()">删除</a>-->
+                <!--<a class="btn m-b-xs w-xs btn-warning btn-rounded" href="javascript:void(0)" onclick="reload_page()">刷新</a>-->
+            </div>
+            <div class="panel panel-default m-t-md">
+                <div class="table-responsive">
+
+
+                    <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search">
+                      <div class="form-group">
+
+                        <div class="input-group">
+                          <!--<input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="搜索..."-->
+                                  <!--name="search01">-->
+
+                            <div class="form-group" style="width: 100%; float: left">
+                                <div class="col-sm-8">
+                                    <table>
+                                        <tr>
+                                            <td>OpenId:</td>
+                                            <td><input type="text" class="form-control" name="open_id" id="open_id" value="{% if open_id %}{{ open_id }}{% end%}"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                          <br>
+                          <span class="input-group-btn">
+                            <button type="submit" class="btn m-b-xs w-xs btn-info btn-rounded"><i class="fa fa-search"></i>搜索</button>
+                          </span>
+                        </div>
+                      </div>
+                    </form>
+
+                    <table class="table table-striped b-t b-light">
+                        <thead>
+                        <tr>
+                            <th>GroupId</th>
+                            <th>HelperUin</th>
+                            <th>OpenId</th>
+                            <th>UserId</th>
+                            <th>购买时间</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in results %}
+                        <tr>
+                            <td>{{ item.GroupId }}</td>
+                            <td>{{ item.HelperUin }}</td>
+                            <td>{{ item.OpenId }}</td>
+                            <td>{{ item.UserId }}</td>
+                            <td>{{ item.BuyData.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                            {% if item.Status == 1 %}
+                            <td>未开通</td>
+                            {% elif item.Status == 2 %}
+                            <td>已开通</td>
+                            {% else %}
+                            <td>未知</td>
+                            {% end %}
+                            <td>
+                                <!--<button class="btn m-b-xs btn-sm btn-info btn-addon" onclick="allocation_helper('{{ item.GroupId }}')">-->
+                                    <!--<i class="fa fa-home"></i>分配助手-->
+                                <!--</button>-->
+                            </td>
+                        </tr>
+                        {% end %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <nav class="text-center m-t-lg m-b-lg">
+                {% module Paginator(page_index, page_size, total_count) %}
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- / welcome -->
+
+{% end %}

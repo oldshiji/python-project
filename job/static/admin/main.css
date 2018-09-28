@@ -1,0 +1,26 @@
+.logo{
+    width:50%;
+    height:80px;
+
+    float:left;
+}
+
+.logo ul li{
+    display:inline-block;
+    color:white;
+    font-size:30px;
+}
+.login{
+    width:50%;
+
+    float:right;
+     height:80px;
+}
+.login ul li{
+    display:inline-block;
+    color:white;
+}
+
+#search div{
+    margin:10px 0px 0px 20px;
+}

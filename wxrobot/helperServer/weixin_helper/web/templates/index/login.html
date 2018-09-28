@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="login-bg">
+<head>
+    <meta charset="utf-8"/>
+    <title>微信小管家－管理后台</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="{{ static_url("3rd_party/bootstrap-3.3.4/css/bootstrap.min.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ static_url("3rd_party/font-awesome-4.3.0/css/font-awesome.min.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ static_url("css/app.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ static_url("css/simple-line-icons.css") }}" type="text/css"/>
+</head>
+<body>
+
+<div class="row-fluid login-wrapper">
+    <a href="#">
+        <img class="logo" src='{{ static_url("img/logo.png") }}'>
+    </a>
+    <form action='{{ reverse_url('login') }}' method="post" class='form-signin' role='form'>
+        {% if next_page %}
+        <input type="hidden" name="next_page" value="{{ next_page }}">
+        {% end %}
+    <div class="span4 box">
+        <div class="content-wrap ask-wrap">
+            <h1 class="h4">用户登陆</h1>
+            <input class="form-control m-t" placeholder="请输入用户名" id="username" name="username" required autofocus>
+            <input class="form-control m-t" type="password" placeholder="请输入密码" id="password" name="password" required>
+
+            <div class="checkbox pull-left"><label class="i-checks"><input type="checkbox"><i></i>记住我的登陆状态</label></div>
+            <button class="btn btn-lg btn-primary btn-block m-t-xxl" type='submit'>登录</button>
+        </div>
+    </div>
+    </form>
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="msg_hint" tabindex="-1" role="dialog" aria-labelledby="model_title" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="msg_hint_title">
+                    错误提示
+                </h4>
+            </div>
+            <div class="modal-body">
+                {% if msg %}{{ msg }}{% end %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script src='{{ static_url("3rd_party/jquery-1.11.2.min.js") }}'></script>
+<script src='{{ static_url("3rd_party/bootstrap-3.3.4/js/bootstrap.min.js") }}' type="text/javascript"></script>
+<script src='{{ static_url("3rd_party/jquery.cookie.js") }}' type="text/javascript"></script>
+<script src='{{ static_url("js/main.js") }}'></script>
+<script>
+    $(function () {
+        $('#msg_hint').modal({
+            keyboard: true,
+            show: {% if msg %} true {% else %} false {% end %}
+        });
+
+        var remember_check = $.cookie('login_save_me_cookie');
+        if (remember_check == 'true') {
+            $('#remember_me_check').attr("checked", 'true');
+            $('#user_name').val($.cookie('login_user_name'));
+            $('#pass_word').val($.cookie('login_user_pwd'));
+        }
+    });
+
+    function set_login_cookie() {
+        if ($('#remember_me_check')[0].checked) {
+            $.cookie('login_save_me_cookie', true);
+            $.cookie('login_user_name', $('#username').val());
+            $.cookie('login_user_pwd', $('#password').val());
+        }
+        else {
+            $.cookie('login_save_me_cookie', null);
+            $.cookie('login_user_name', null);
+            $.cookie('login_user_pwd', null);
+        }
+    }
+</script>
+
+</body>
+</html>

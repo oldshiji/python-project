@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}处理结果{% end %}
+
+{% block body %}
+<div class="col m-t-lg">
+    <div class="bg-light lter b-b wrapper-md">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <h1 class="m-n font-thin h4 text-black">欢迎登陆趋势金融研究所管理后台</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container w-xxl w-auto-xs m-t-lg">
+        <div class="text-center m-b-lg">
+            <h1 class="text-shadow text-white"><i class="glyphicon-ok glyphicon m-r-md m-t-xxl"></i>{{ message }}</h1>
+        </div>
+        <div class="list-group bg-info auto m-b-sm m-b-lg">
+            <a class="list-group-item" href="{{ next_page }}">
+                <i class="fa fa-chevron-right text-muted"></i>
+                <i class="fa fa-fw fa-mail-forward m-r-xs"></i>
+                返回
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- / welcome -->
+
+{% end %}

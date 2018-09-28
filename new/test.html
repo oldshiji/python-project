@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+/*
+    var t ='a'
+
+    function test(){
+        alert(t)
+        t = 'b'
+        alert(t)
+    }
+
+    test()
+    */
+var my = {
+    num:2,
+    add:function () {
+
+        this.num=3;
+        (function(){
+            alert(this.num)
+            this.num= 4
+        })();
+        alert(this.num);
+    }
+}
+
+my.add()
+</script>
+</body>
+</html>

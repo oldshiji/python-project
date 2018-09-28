@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function Person(name,age)
+    {
+        this.name=name;
+        this.age = age;
+        //this.prototype.show = function(){
+        //    return this.name+",his age is:"+age;
+        //}
+        this.show = function(){
+            return this.name+",his age is:"+age;
+        }
+        Person.prototype.sex = 'male';
+    }
+
+    tony = new Person('tony',2000);
+
+    //delete tony.sex;
+    delete tony.name;
+    alert(tony.name);
+/*
+    alert(tony.name);
+    alert(tony.age);
+    alert(tony.show());
+    alert(tony.sex);
+    alert(tony.say());
+
+    delete tony.say;
+
+    delete tony.sex;
+
+    alert(tony.sex);
+
+    alert(tony.say);
+       Person.prototype.say = function(){
+        return "hello,world";
+    }
+
+
+    tony.sport = 'ball';
+
+    alert(tony.sport);
+
+    delete tony.sport;
+
+    alert(tony.sport);
+
+    tony.sayHello = function(){
+
+        return "I say hello";
+    };
+
+    alert(tony.sayHello());
+
+    delete tony.sayHello;
+
+    alert(tony.sayHello());
+    */
+
+
+</script>
+</body>
+</html>

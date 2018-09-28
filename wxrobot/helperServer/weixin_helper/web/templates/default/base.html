@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>微信小工具管理后台 - {% block title %} {% end %}</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="{{ static_url("3rd_party/bootstrap-3.3.4/css/bootstrap.min.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ static_url("3rd_party/font-awesome-4.3.0/css/font-awesome.min.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ static_url("3rd_party/bootstrap-combobox-1.1.6/css/bootstrap-combobox.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ static_url("css/app.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ static_url("css/simple-line-icons.css") }}" type="text/css"/>
+    {% block head %} {% end %}
+</head>
+<body>
+  <div class="app app-header-fixed" id="app">
+    <!-- navbar -->
+    <div class="app-header navbar">
+      <!-- navbar header -->
+      <div class="navbar-header bg-dark">
+        <button class="pull-right visible-xs dk" data-toggle="class:show" data-target=".navbar-collapse">
+          <i class="glyphicon glyphicon-cog"></i>
+        </button>
+        <button class="pull-right visible-xs" data-toggle="class:off-screen" data-target=".app-aside" ui-scroll="app">
+          <i class="glyphicon glyphicon-align-justify"></i>
+        </button>
+        <!-- brand -->
+        <a href="{{ reverse_url('index') }}" class="navbar-brand text-lt">
+          <i class="fa fa-desktop"></i>
+
+          <span class="hidden-folded m-l-xs">管理后台</span>
+        </a>
+        <!-- / brand -->
+      </div>
+      <!-- / navbar header -->
+
+      <!-- navbar collapse -->
+      <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
+        <!-- buttons -->
+        <!--div class="nav navbar-nav hidden-xs">
+          <a href="#" class="btn no-shadow navbar-btn" data-toggle="class:app-aside-folded" data-target=".app">
+            <i class="fa fa-dedent fa-fw text"></i>
+            <i class="fa fa-indent fa-fw text-active"></i>
+          </a>
+        </div>
+        <!-- / buttons -->
+
+        <!-- search form -->
+        <form class="navbar-form navbar-form-sm navbar-left shift" ui-shift="prependTo" data-target=".navbar-collapse" role="search" ng-controller="TypeaheadDemoCtrl">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder" placeholder="搜索..."
+                      name="search">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </div>
+        </form>
+        <!-- / search form -->
+
+        <!-- nabar right -->
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
+              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                <!--img src="img/a0.jpg" alt="..."-->
+                {% if avatar_url %}
+                  <img id="super_img" src='{{ file_site_url }}{{ avatar_url }}' alt="User Image"/>
+                {% else %}
+                  <img id="super_img" src='{{ static_url("img/avatar5.png") }}' alt="User Image"/>
+                {% end %}
+                <i class="on md b-white bottom"></i>
+              </span>
+              <span class="hidden-sm hidden-md">{{ user['LoginName'] }}</span> <b class="caret"></b>
+            </a>
+            <!-- 个人设置 -->
+            <ul class="dropdown-menu animated fadeInRight w">
+              <li class="wrapper b-b m-b-sm bg-light m-t-n-xs">
+                <div>
+                  <p>{{ user['LoginName'] }}</p>
+                </div>
+                <progressbar value="60" class="progress-xs m-b-none bg-white"></progressbar>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="badge bg-danger pull-right">3条</span>
+                  <span>消息</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <span class="label bg-info pull-right">修改</span>
+                  <span>个人资料</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  </span>修改密码</span>
+                </a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="">退出</a>
+              </li>
+            </ul>
+            <!-- / 个人设置 -->
+          </li>
+        </ul>
+        <!-- / navbar right -->
+
+      </div>
+      <!-- / navbar collapse -->
+    </div>
+    <!-- / navbar -->
+
+    <!-- menu -->
+    <div class="app-aside hidden-xs bg-dark">
+      <div class="aside-wrap" style="">
+
+        <div class="navi-wrap" >
+          <!-- user -->
+          <div class="clearfix text-center " id="aside-user">
+            <div class="dropdown wrapper">
+              <a>
+                <span class="thumb-lg w-auto-folded avatar m-t-sm">
+                  <!--img src="img/a0.jpg" class="img-full" alt=""-->
+                  {% if avatar_url %}
+                    <img id="super_img" src='{{ file_site_url }}{{ avatar_url }}' alt="User Image"/>
+                  {% else %}
+                    <img id="super_img" src='{{ static_url("img/avatar5.png") }}' alt="User Image"/>
+                  {% end %}
+                </span>
+              </a>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle hidden-folded">
+                <span class="clear">
+                  <span class="block m-t-sm">
+                    <strong class="font-bold text-lt">{{ user['LoginName'] }}</strong>
+                  </span>
+                  <span class="text-muted text-xs block">
+                      管理员
+                  </span>
+                </span>
+              </a>
+            </div>
+            <div class="line dk hidden-folded"></div>
+          </div>
+          <!-- / user -->
+
+          <!-- nav -->
+          <nav ui-nav class="navi">
+            <ul class="nav">
+              <li class="active">
+                <a href="{# {{ reverse_url('home_page') }} #}" class="auto">
+                  <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="fa fa-users"></i>
+                  <span class="font-bold">助手管理</span>
+                </a>
+                <ul class="nav nav-sub dk">
+                  <li>
+                    <a href="{{ reverse_url('helper_manager') }}">
+                      <span>助手管理</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ reverse_url('customer_helper_manager') }}">
+                      <span>客户助手管理</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ reverse_url('customer_group_manager') }}">
+                      <span>群信息管理</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="line dk hidden-folded"></li>
+
+            </ul>
+          </nav>
+          <!-- / nav -->
+
+        </div>
+      </div>
+    </div>
+    <!-- / menu -->
+
+    <!-- content -->
+    <div class="app-content">
+      <a href class="off-screen-toggle hide" data-toggle="class:off-screen" data-target=".app-aside" ></a>
+      <div class="app-content-body fade-in-up">
+          {% block body %} {% end %}
+      </div>
+    </div>
+    <!-- /content -->
+
+    <!-- footer -->
+    <div class="app-footer wrapper b-t bg-light">
+      <span class="pull-right">顶部 <a href="#app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
+      &copy; 2018 Copyright. More Templates <a href="http://www.baidu.com/" target="_blank" title="小助手">小助手</a> - Collect from <a href="http://www.baidu.com/" title="小助手" target="_blank">小助手</a>
+    </div>
+    <!-- / footer -->
+  </div>
+
+  <!-- jQuery -->
+  <script src='{{ static_url("3rd_party/jquery-1.11.2.min.js") }}'></script>
+  <script src='{{ static_url("3rd_party/bootstrap-3.3.4/js/bootstrap.min.js") }}' type="text/javascript"></script>
+  <script src='{{ static_url("3rd_party/jquery-ui.min.js") }}' type="text/javascript"></script>
+  <script src='{{ static_url("3rd_party/jquery.cookie.js") }}' type="text/javascript"></script>
+  <script src='{{ static_url("3rd_party/bootstrap-combobox-1.1.6/js/bootstrap-combobox.js") }}' type="text/javascript"></script>
+  <script src='{{ static_url("js/main.js") }}'></script>
+
+  {% block js_scripts %} {% end %}
+
+</body>
+</html>

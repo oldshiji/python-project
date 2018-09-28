@@ -1,0 +1,24 @@
+import demo21
+
+
+""""
+print(demo21.f2(100))
+
+print(demo21.__name__)
+
+print(__name__)
+
+demo21.f1(10)
+f = demo21.f2
+num = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+print(num)
+
+
+print(f(num))
+"""
+
+print(dir(demo21))
+
+for i in dir(demo21):
+    print(type(i),i)

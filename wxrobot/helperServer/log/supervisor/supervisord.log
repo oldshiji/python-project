@@ -1,0 +1,358 @@
+2018-03-27 11:12:18,757 INFO RPC interface 'supervisor' initialized
+2018-03-27 11:12:18,757 INFO RPC interface 'supervisor' initialized
+2018-03-27 11:12:18,758 INFO daemonizing the supervisord process
+2018-03-27 11:12:18,758 INFO supervisord started with pid 12931
+2018-03-27 11:12:19,761 INFO spawned: 'helper_server' with pid 12932
+2018-03-27 11:12:19,763 INFO spawned: 'hub_server' with pid 12933
+2018-03-27 11:12:20,971 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-03-27 11:12:20,971 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-02 16:55:33,731 INFO RPC interface 'supervisor' initialized
+2018-04-02 16:55:34,032 INFO RPC interface 'supervisor' initialized
+2018-04-02 16:55:34,033 INFO daemonizing the supervisord process
+2018-04-02 16:55:34,033 INFO supervisord started with pid 23521
+2018-04-02 16:55:35,036 INFO spawned: 'file_server' with pid 23522
+2018-04-02 16:55:35,038 INFO spawned: 'helper_server' with pid 23523
+2018-04-02 16:55:35,040 INFO spawned: 'hub_server' with pid 23524
+2018-04-02 16:55:35,082 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 16:55:35,280 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 16:55:35,286 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 16:55:36,289 INFO spawned: 'file_server' with pid 23527
+2018-04-02 16:55:36,291 INFO spawned: 'helper_server' with pid 23528
+2018-04-02 16:55:36,293 INFO spawned: 'hub_server' with pid 23529
+2018-04-02 16:55:36,323 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 16:55:36,528 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 16:55:36,532 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 16:55:38,535 INFO spawned: 'file_server' with pid 23532
+2018-04-02 16:55:38,537 INFO spawned: 'helper_server' with pid 23533
+2018-04-02 16:55:38,539 INFO spawned: 'hub_server' with pid 23534
+2018-04-02 16:55:38,570 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 16:55:38,764 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 16:55:38,783 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 16:55:41,787 INFO spawned: 'file_server' with pid 23537
+2018-04-02 16:55:41,789 INFO spawned: 'helper_server' with pid 23538
+2018-04-02 16:55:41,791 INFO spawned: 'hub_server' with pid 23539
+2018-04-02 16:55:41,845 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 16:55:41,845 INFO gave up: file_server entered FATAL state, too many start retries too quickly
+2018-04-02 16:55:42,009 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 16:55:42,009 INFO gave up: helper_server entered FATAL state, too many start retries too quickly
+2018-04-02 16:55:42,031 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 16:55:43,033 INFO gave up: hub_server entered FATAL state, too many start retries too quickly
+2018-04-02 16:57:57,883 INFO RPC interface 'supervisor' initialized
+2018-04-02 16:57:58,184 INFO RPC interface 'supervisor' initialized
+2018-04-02 16:57:58,185 INFO daemonizing the supervisord process
+2018-04-02 16:57:58,186 INFO supervisord started with pid 23549
+2018-04-02 16:57:59,189 INFO spawned: 'file_server' with pid 23550
+2018-04-02 16:57:59,191 INFO spawned: 'helper_server' with pid 23551
+2018-04-02 16:57:59,193 INFO spawned: 'hub_server' with pid 23552
+2018-04-02 16:57:59,243 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 16:57:59,409 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 16:57:59,439 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 16:58:00,442 INFO spawned: 'file_server' with pid 23555
+2018-04-02 16:58:00,444 INFO spawned: 'helper_server' with pid 23556
+2018-04-02 16:58:00,446 INFO spawned: 'hub_server' with pid 23557
+2018-04-02 16:58:00,475 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 16:58:00,679 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 16:58:00,680 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 16:58:02,684 INFO spawned: 'file_server' with pid 23560
+2018-04-02 16:58:02,686 INFO spawned: 'helper_server' with pid 23561
+2018-04-02 16:58:02,688 INFO spawned: 'hub_server' with pid 23562
+2018-04-02 16:58:02,734 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 16:58:02,918 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 16:58:02,932 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 16:58:05,938 INFO spawned: 'file_server' with pid 23565
+2018-04-02 16:58:05,940 INFO spawned: 'helper_server' with pid 23566
+2018-04-02 16:58:05,943 INFO spawned: 'hub_server' with pid 23567
+2018-04-02 16:58:05,999 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 16:58:06,000 INFO gave up: file_server entered FATAL state, too many start retries too quickly
+2018-04-02 16:58:06,184 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 16:58:06,187 INFO gave up: hub_server entered FATAL state, too many start retries too quickly
+2018-04-02 16:58:06,187 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 16:58:07,189 INFO gave up: helper_server entered FATAL state, too many start retries too quickly
+2018-04-02 17:00:03,741 INFO RPC interface 'supervisor' initialized
+2018-04-02 17:00:04,044 INFO RPC interface 'supervisor' initialized
+2018-04-02 17:00:04,045 INFO daemonizing the supervisord process
+2018-04-02 17:00:04,046 INFO supervisord started with pid 23591
+2018-04-02 17:00:05,049 INFO spawned: 'file_server' with pid 23592
+2018-04-02 17:00:05,051 INFO spawned: 'helper_server' with pid 23593
+2018-04-02 17:00:05,053 INFO spawned: 'hub_server' with pid 23594
+2018-04-02 17:00:05,103 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 17:00:05,276 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 17:00:05,294 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 17:00:06,297 INFO spawned: 'file_server' with pid 23597
+2018-04-02 17:00:06,299 INFO spawned: 'helper_server' with pid 23598
+2018-04-02 17:00:06,301 INFO spawned: 'hub_server' with pid 23599
+2018-04-02 17:00:06,340 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 17:00:06,527 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 17:00:06,544 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 17:00:08,548 INFO spawned: 'file_server' with pid 23602
+2018-04-02 17:00:08,550 INFO spawned: 'helper_server' with pid 23603
+2018-04-02 17:00:08,552 INFO spawned: 'hub_server' with pid 23604
+2018-04-02 17:00:08,611 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 17:00:08,777 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 17:00:08,794 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 17:00:11,797 INFO spawned: 'file_server' with pid 23607
+2018-04-02 17:00:11,800 INFO spawned: 'helper_server' with pid 23608
+2018-04-02 17:00:11,801 INFO spawned: 'hub_server' with pid 23609
+2018-04-02 17:00:11,860 INFO exited: file_server (exit status 1; not expected)
+2018-04-02 17:00:11,860 INFO gave up: file_server entered FATAL state, too many start retries too quickly
+2018-04-02 17:00:12,019 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 17:00:12,020 INFO gave up: hub_server entered FATAL state, too many start retries too quickly
+2018-04-02 17:00:12,041 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 17:00:13,043 INFO gave up: helper_server entered FATAL state, too many start retries too quickly
+2018-04-02 17:03:22,914 INFO RPC interface 'supervisor' initialized
+2018-04-02 17:03:23,215 INFO RPC interface 'supervisor' initialized
+2018-04-02 17:03:23,216 INFO daemonizing the supervisord process
+2018-04-02 17:03:23,217 INFO supervisord started with pid 23693
+2018-04-02 17:03:24,220 INFO spawned: 'file_server' with pid 23694
+2018-04-02 17:03:24,222 INFO spawned: 'helper_server' with pid 23695
+2018-04-02 17:03:24,224 INFO spawned: 'hub_server' with pid 23696
+2018-04-02 17:03:24,524 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 17:03:24,565 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 17:03:25,566 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-02 17:03:25,568 INFO spawned: 'helper_server' with pid 23700
+2018-04-02 17:03:25,570 INFO spawned: 'hub_server' with pid 23701
+2018-04-02 17:03:25,783 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 17:03:25,807 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 17:03:27,811 INFO spawned: 'helper_server' with pid 23705
+2018-04-02 17:03:27,813 INFO spawned: 'hub_server' with pid 23706
+2018-04-02 17:03:28,027 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 17:03:28,053 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 17:03:31,058 INFO spawned: 'helper_server' with pid 23710
+2018-04-02 17:03:31,060 INFO spawned: 'hub_server' with pid 23711
+2018-04-02 17:03:31,276 INFO exited: helper_server (exit status 1; not expected)
+2018-04-02 17:03:31,296 INFO gave up: helper_server entered FATAL state, too many start retries too quickly
+2018-04-02 17:03:31,296 INFO exited: hub_server (exit status 1; not expected)
+2018-04-02 17:03:32,296 INFO gave up: hub_server entered FATAL state, too many start retries too quickly
+2018-04-02 17:07:14,092 INFO RPC interface 'supervisor' initialized
+2018-04-02 17:07:14,393 INFO RPC interface 'supervisor' initialized
+2018-04-02 17:07:14,394 INFO daemonizing the supervisord process
+2018-04-02 17:07:14,394 INFO supervisord started with pid 23750
+2018-04-02 17:07:15,398 INFO spawned: 'file_server' with pid 23751
+2018-04-02 17:07:15,400 INFO spawned: 'helper_server' with pid 23752
+2018-04-02 17:07:15,402 INFO spawned: 'hub_server' with pid 23753
+2018-04-02 17:07:16,702 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-02 17:07:16,702 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-02 17:07:16,702 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-10 15:29:02,813 INFO waiting for helper_server to stop
+2018-04-10 15:29:02,874 INFO stopped: helper_server (exit status 0)
+2018-04-10 15:29:05,494 INFO waiting for hub_server to stop
+2018-04-10 15:29:05,527 INFO stopped: hub_server (exit status 0)
+2018-04-10 15:29:07,555 INFO waiting for file_server to stop
+2018-04-10 15:29:07,557 INFO stopped: file_server (terminated by SIGTERM)
+2018-04-10 15:30:03,200 INFO spawned: 'file_server' with pid 1563
+2018-04-10 15:30:04,202 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-10 15:30:05,971 INFO spawned: 'hub_server' with pid 1565
+2018-04-10 15:30:06,274 INFO exited: hub_server (exit status 1; not expected)
+2018-04-10 15:30:07,277 INFO spawned: 'hub_server' with pid 1567
+2018-04-10 15:30:07,518 INFO exited: hub_server (exit status 1; not expected)
+2018-04-10 15:30:08,545 ERRO 180.168.166.115:14233 - - [10/Apr/2018:07:30:08 +0800] "GET /?message=ERROR%3A%20Process%20server%3Ahub_server%3A%20spawn%20error HTTP/1.1" 200 4599
+2018-04-10 15:30:09,589 INFO spawned: 'hub_server' with pid 1569
+2018-04-10 15:30:09,828 INFO exited: hub_server (exit status 1; not expected)
+2018-04-10 15:30:12,832 INFO spawned: 'hub_server' with pid 1571
+2018-04-10 15:30:13,082 INFO exited: hub_server (exit status 1; not expected)
+2018-04-10 15:30:14,083 INFO gave up: hub_server entered FATAL state, too many start retries too quickly
+2018-04-10 15:32:49,460 ERRO 180.168.166.115:22910 - - [10/Apr/2018:07:32:49 +0800] "GET /?message=ERROR%3A%20Process%20server%3Ahub_server%3A%20spawn%20error HTTP/1.1" 200 4643
+2018-04-10 15:32:51,206 INFO spawned: 'hub_server' with pid 1587
+2018-04-10 15:32:52,420 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-10 15:32:53,999 INFO spawned: 'helper_server' with pid 1589
+2018-04-10 15:32:55,203 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-14 11:01:58,600 INFO exited: file_server (terminated by SIGTERM; not expected)
+2018-04-14 11:01:58,600 WARN received SIGHUP indicating restart request
+2018-04-14 11:01:58,601 INFO waiting for helper_server, hub_server to die
+2018-04-14 11:01:58,608 INFO stopped: hub_server (terminated by SIGHUP)
+2018-04-14 11:01:58,627 INFO stopped: helper_server (terminated by SIGHUP)
+2018-04-14 11:01:58,627 WARN received SIGTERM indicating exit request
+2018-04-18 16:19:45,320 INFO RPC interface 'supervisor' initialized
+2018-04-18 16:19:45,360 INFO RPC interface 'supervisor' initialized
+2018-04-18 16:19:45,362 INFO daemonizing the supervisord process
+2018-04-18 16:19:45,362 INFO supervisord started with pid 8980
+2018-04-18 16:19:46,365 INFO spawned: 'file_server' with pid 8981
+2018-04-18 16:19:46,367 INFO spawned: 'helper_server' with pid 8982
+2018-04-18 16:19:46,371 INFO spawned: 'hub_server' with pid 8983
+2018-04-18 16:19:46,864 INFO exited: file_server (exit status 1; not expected)
+2018-04-18 16:19:48,088 INFO spawned: 'file_server' with pid 8987
+2018-04-18 16:19:48,088 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-18 16:19:48,088 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-18 16:19:48,300 INFO exited: file_server (exit status 1; not expected)
+2018-04-18 16:19:51,029 INFO spawned: 'file_server' with pid 8989
+2018-04-18 16:19:51,242 INFO exited: file_server (exit status 1; not expected)
+2018-04-18 16:19:54,245 INFO spawned: 'file_server' with pid 8991
+2018-04-18 16:19:54,461 INFO exited: file_server (exit status 1; not expected)
+2018-04-18 16:19:55,463 INFO gave up: file_server entered FATAL state, too many start retries too quickly
+2018-04-18 17:17:47,468 INFO spawned: 'file_server' with pid 9152
+2018-04-18 17:17:48,915 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 17:16:22,632 INFO exited: file_server (exit status 2; expected)
+2018-04-21 17:20:10,179 INFO spawned: 'file_server' with pid 13082
+2018-04-21 17:20:11,892 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 17:25:23,082 INFO waiting for hub_server to stop
+2018-04-21 17:25:23,111 INFO stopped: hub_server (exit status 0)
+2018-04-21 17:25:24,907 INFO waiting for helper_server to stop
+2018-04-21 17:25:24,944 INFO stopped: helper_server (exit status 0)
+2018-04-21 17:25:26,489 INFO stopped: file_server (terminated by SIGTERM)
+2018-04-21 17:25:28,462 INFO spawned: 'hub_server' with pid 13136
+2018-04-21 17:25:29,683 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 17:25:36,815 INFO spawned: 'helper_server' with pid 13138
+2018-04-21 17:25:38,007 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 17:25:51,046 INFO spawned: 'file_server' with pid 13140
+2018-04-21 17:25:52,200 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 18:09:50,999 INFO waiting for hub_server to stop
+2018-04-21 18:09:51,025 INFO stopped: hub_server (exit status 0)
+2018-04-21 18:09:53,441 INFO spawned: 'hub_server' with pid 13234
+2018-04-21 18:09:54,653 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 18:09:56,614 INFO waiting for file_server to stop
+2018-04-21 18:09:56,617 INFO stopped: file_server (terminated by SIGTERM)
+2018-04-21 18:09:58,438 INFO waiting for helper_server to stop
+2018-04-21 18:09:58,507 INFO stopped: helper_server (exit status 0)
+2018-04-21 18:10:00,020 INFO stopped: hub_server (exit status 0)
+2018-04-21 18:10:02,884 INFO spawned: 'hub_server' with pid 13241
+2018-04-21 18:10:04,092 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 18:10:04,872 INFO spawned: 'helper_server' with pid 13243
+2018-04-21 18:10:06,065 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 18:10:07,506 INFO spawned: 'file_server' with pid 13245
+2018-04-21 18:10:08,959 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 19:22:41,062 INFO waiting for helper_server to stop
+2018-04-21 19:22:41,137 INFO stopped: helper_server (exit status 0)
+2018-04-21 19:22:42,846 INFO waiting for hub_server to stop
+2018-04-21 19:22:42,875 INFO stopped: hub_server (exit status 0)
+2018-04-21 19:22:44,386 INFO waiting for file_server to stop
+2018-04-21 19:22:44,389 INFO stopped: file_server (terminated by SIGTERM)
+2018-04-21 19:22:47,528 INFO spawned: 'hub_server' with pid 13431
+2018-04-21 19:22:48,734 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 19:22:50,058 INFO spawned: 'helper_server' with pid 13433
+2018-04-21 19:22:51,249 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 19:22:52,075 INFO spawned: 'file_server' with pid 13435
+2018-04-21 19:22:53,539 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 20:08:12,621 INFO waiting for helper_server to stop
+2018-04-21 20:08:12,676 INFO stopped: helper_server (exit status 0)
+2018-04-21 20:08:14,224 INFO waiting for hub_server to stop
+2018-04-21 20:08:14,252 INFO stopped: hub_server (exit status 0)
+2018-04-21 20:08:15,710 INFO stopped: file_server (terminated by SIGTERM)
+2018-04-21 20:08:40,987 INFO spawned: 'hub_server' with pid 13539
+2018-04-21 20:08:42,195 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 20:08:43,623 INFO spawned: 'helper_server' with pid 13541
+2018-04-21 20:08:44,816 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-21 20:08:46,118 INFO spawned: 'file_server' with pid 13543
+2018-04-21 20:08:47,567 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-23 14:26:10,458 INFO waiting for helper_server to stop
+2018-04-23 14:26:12,847 INFO waiting for helper_server to stop
+2018-04-23 14:26:14,885 INFO waiting for helper_server to stop
+2018-04-23 14:26:16,921 INFO waiting for helper_server to stop
+2018-04-23 14:26:19,505 INFO waiting for helper_server to stop
+2018-04-23 14:26:20,520 WARN killing 'helper_server' (13541) with SIGKILL
+2018-04-23 14:26:21,525 INFO stopped: helper_server (terminated by SIGKILL)
+2018-04-23 14:26:23,768 INFO spawned: 'helper_server' with pid 15738
+2018-04-23 14:26:25,320 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-23 14:28:20,599 INFO waiting for helper_server to stop
+2018-04-23 14:28:22,604 INFO waiting for helper_server to stop
+2018-04-23 14:28:24,607 INFO waiting for helper_server to stop
+2018-04-23 14:28:26,610 INFO waiting for helper_server to stop
+2018-04-23 14:28:28,613 INFO waiting for helper_server to stop
+2018-04-23 14:28:30,643 WARN killing 'helper_server' (15738) with SIGKILL
+2018-04-23 14:28:30,643 INFO waiting for helper_server to stop
+2018-04-23 14:28:30,647 INFO stopped: helper_server (terminated by SIGKILL)
+2018-04-23 14:28:32,901 INFO waiting for hub_server to stop
+2018-04-23 14:28:32,931 INFO stopped: hub_server (exit status 0)
+2018-04-23 14:28:38,333 INFO spawned: 'hub_server' with pid 15771
+2018-04-23 14:28:39,540 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-23 14:28:41,978 INFO spawned: 'helper_server' with pid 15773
+2018-04-23 14:28:43,169 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-23 16:02:34,708 INFO waiting for helper_server to stop
+2018-04-23 16:02:36,713 INFO waiting for helper_server to stop
+2018-04-23 16:02:39,544 INFO waiting for helper_server to stop
+2018-04-23 16:02:41,547 INFO waiting for helper_server to stop
+2018-04-23 16:02:43,550 INFO waiting for helper_server to stop
+2018-04-23 16:02:45,553 WARN killing 'helper_server' (15773) with SIGKILL
+2018-04-23 16:02:45,553 INFO waiting for helper_server to stop
+2018-04-23 16:02:45,557 INFO stopped: helper_server (terminated by SIGKILL)
+2018-04-23 16:02:50,280 INFO waiting for hub_server to stop
+2018-04-23 16:02:50,309 INFO stopped: hub_server (exit status 0)
+2018-04-23 16:02:52,506 INFO waiting for file_server to stop
+2018-04-23 16:02:52,508 INFO stopped: file_server (terminated by SIGTERM)
+2018-04-23 16:02:54,782 INFO spawned: 'helper_server' with pid 15886
+2018-04-23 16:02:56,039 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-23 16:03:10,377 INFO waiting for helper_server to stop
+2018-04-23 16:03:10,402 INFO stopped: helper_server (exit status 0)
+2018-04-23 16:03:13,357 INFO spawned: 'hub_server' with pid 15889
+2018-04-23 16:03:14,563 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-23 16:03:15,908 INFO spawned: 'helper_server' with pid 15891
+2018-04-23 16:03:17,104 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-23 16:03:22,034 INFO spawned: 'file_server' with pid 15893
+2018-04-23 16:03:23,533 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-23 20:38:28,748 INFO waiting for helper_server to stop
+2018-04-23 20:38:28,813 INFO stopped: helper_server (exit status 0)
+2018-04-23 20:38:30,975 INFO waiting for hub_server to stop
+2018-04-23 20:38:31,004 INFO stopped: hub_server (exit status 0)
+2018-04-23 20:38:33,127 INFO waiting for file_server to stop
+2018-04-23 20:38:33,129 INFO stopped: file_server (terminated by SIGTERM)
+2018-04-23 20:41:12,388 INFO spawned: 'hub_server' with pid 16266
+2018-04-23 20:41:13,598 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-23 20:41:15,339 INFO spawned: 'helper_server' with pid 16268
+2018-04-23 20:41:16,533 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-23 20:41:17,630 INFO spawned: 'file_server' with pid 16270
+2018-04-23 20:41:19,081 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-23 20:47:58,357 INFO waiting for helper_server to stop
+2018-04-23 20:48:00,448 INFO waiting for helper_server to stop
+2018-04-23 20:48:02,450 INFO waiting for helper_server to stop
+2018-04-23 20:48:05,095 INFO waiting for helper_server to stop
+2018-04-23 20:48:07,098 INFO waiting for helper_server to stop
+2018-04-23 20:48:09,100 WARN killing 'helper_server' (16268) with SIGKILL
+2018-04-23 20:48:09,101 INFO waiting for helper_server to stop
+2018-04-23 20:48:09,104 INFO stopped: helper_server (terminated by SIGKILL)
+2018-04-23 20:48:11,908 INFO spawned: 'helper_server' with pid 16289
+2018-04-23 20:48:13,598 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-24 10:10:14,602 INFO waiting for helper_server to stop
+2018-04-24 10:10:15,371 INFO stopped: helper_server (exit status 0)
+2018-04-24 10:10:19,488 INFO waiting for hub_server to stop
+2018-04-24 10:10:19,516 INFO stopped: hub_server (exit status 0)
+2018-04-24 10:10:21,553 INFO waiting for file_server to stop
+2018-04-24 10:10:21,556 INFO stopped: file_server (terminated by SIGTERM)
+2018-04-24 10:24:37,981 INFO spawned: 'hub_server' with pid 17051
+2018-04-24 10:24:39,191 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-24 10:24:40,592 INFO spawned: 'helper_server' with pid 17053
+2018-04-24 10:24:41,791 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-24 10:24:43,140 INFO spawned: 'file_server' with pid 17055
+2018-04-24 10:24:44,170 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-24 10:24:44,195 ERRO 180.168.166.115:5789 - - [24/Apr/2018:02:24:44 +0800] "GET /?message=ERROR%3A%20Process%20web%3Afile_server%3A%20already%20started HTTP/1.1" 200 4737
+2018-04-24 10:26:13,594 INFO waiting for helper_server to stop
+2018-04-24 10:26:13,619 INFO stopped: helper_server (exit status 0)
+2018-04-24 10:26:16,242 INFO waiting for file_server to stop
+2018-04-24 10:26:16,245 INFO stopped: file_server (terminated by SIGTERM)
+2018-04-24 10:27:28,687 INFO waiting for hub_server to stop
+2018-04-24 10:27:28,716 INFO stopped: hub_server (exit status 0)
+2018-04-24 10:27:30,342 INFO spawned: 'hub_server' with pid 17089
+2018-04-24 10:27:31,576 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-24 10:27:32,247 INFO spawned: 'helper_server' with pid 17091
+2018-04-24 10:27:33,437 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-24 10:27:34,377 INFO spawned: 'file_server' with pid 17093
+2018-04-24 10:27:35,150 ERRO 180.168.166.115:43557 - - [24/Apr/2018:02:27:35 +0800] "GET /?message=ERROR%3A%20Process%20web%3Afile_server%3A%20already%20started HTTP/1.1" 200 4622
+2018-04-24 10:27:36,151 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-24 10:27:39,025 ERRO 180.168.166.115:43557 - - [24/Apr/2018:02:27:39 +0800] "GET /?message=ERROR%3A%20Process%20web%3Afile_server%3A%20already%20started HTTP/1.1" 200 4737
+2018-04-24 19:10:55,303 INFO waiting for helper_server to stop
+2018-04-24 19:10:57,308 INFO waiting for helper_server to stop
+2018-04-24 19:11:00,094 INFO waiting for helper_server to stop
+2018-04-24 19:11:02,097 INFO waiting for helper_server to stop
+2018-04-24 19:11:04,099 INFO waiting for helper_server to stop
+2018-04-24 19:11:05,821 WARN killing 'helper_server' (17091) with SIGKILL
+2018-04-24 19:11:05,825 INFO stopped: helper_server (terminated by SIGKILL)
+2018-04-24 19:11:11,587 INFO waiting for hub_server to stop
+2018-04-24 19:11:11,615 INFO stopped: hub_server (exit status 0)
+2018-04-24 19:11:12,901 INFO stopped: file_server (terminated by SIGTERM)
+2018-04-24 19:12:12,845 INFO spawned: 'hub_server' with pid 17631
+2018-04-24 19:12:14,057 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-24 19:12:15,621 INFO spawned: 'helper_server' with pid 17633
+2018-04-24 19:12:16,812 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-24 19:12:19,894 INFO spawned: 'file_server' with pid 17635
+2018-04-24 19:12:21,352 INFO success: file_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-26 09:03:34,440 INFO waiting for hub_server to stop
+2018-04-26 09:03:34,468 INFO stopped: hub_server (exit status 0)
+2018-04-26 09:03:39,280 INFO spawned: 'hub_server' with pid 19575
+2018-04-26 09:03:40,499 INFO success: hub_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-04-26 09:05:10,986 INFO waiting for helper_server to stop
+2018-04-26 09:05:13,487 INFO waiting for helper_server to stop
+2018-04-26 09:05:15,623 INFO waiting for helper_server to stop
+2018-04-26 09:05:18,279 INFO waiting for helper_server to stop
+2018-04-26 09:05:20,837 INFO waiting for helper_server to stop
+2018-04-26 09:05:21,152 WARN killing 'helper_server' (17633) with SIGKILL
+2018-04-26 09:05:22,157 INFO stopped: helper_server (terminated by SIGKILL)
+2018-04-26 09:05:28,136 INFO spawned: 'helper_server' with pid 19577
+2018-04-26 09:05:29,353 INFO success: helper_server entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

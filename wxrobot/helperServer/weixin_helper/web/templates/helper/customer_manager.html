@@ -1,0 +1,240 @@
+{% extends '../default/base.html' %}
+
+{% block title %}微信公众号客户管理{% end %}
+
+{% block body %}
+<!-- welcome -->
+
+<div class="col m-t-lg">
+    <div class="bg-light lter b-b wrapper-md">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <h1 class="m-n font-thin h4 text-black">微信公众号客户管理</h1>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-md ng-scope">
+        <div class="form-horizontal ng-valid ng-dirty">
+            <div>
+                <!--<a class="btn m-b-xs w-xs btn-success btn-rounded" href="javascript:void(0)" onclick="modify_article()">编辑</a>-->
+                <!--<a class="btn m-b-xs w-xs btn-info btn-rounded" href="javascript:void(0)" onclick="delete_article()">删除</a>-->
+                <!--<a class="btn m-b-xs w-xs btn-warning btn-rounded" href="javascript:void(0)" onclick="reload_page()">刷新</a>-->
+            </div>
+            <div class="panel panel-default m-t-md">
+                <div class="table-responsive">
+                    <table class="table table-striped b-t b-light">
+                        <thead>
+                        <tr>
+                            <th>CID</th>
+                            <th>OpenId</th>
+                            <th>昵称</th>
+                            <th>关注时间</th>
+                            <th>UID</th>
+                            <th>HelperUin</th>
+                            <th>Helper昵称</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in results %}
+                        <tr>
+                            <td>{{ item.CustomerInfo.CustId }}</td>
+                            <td>{{ item.CustomerInfo.OpenId }}</td>
+                            <td>{{ item.CustomerInfo.NickName }}</td>
+                            <td>{{ item.CustomerInfo.CreateTime.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                            <td>{{ item.CustomerInfo.UserId }}</td>
+                            <td>{{ item.CustomerInfo.HelperToken }}</td>
+                            <td>{{ item.HelperInfo.NickName if item.HelperInfo else ""}}</td>
+                            <td>
+                                <button class="btn m-b-xs btn-sm btn-info btn-addon" onclick="allocation_helper('{{ item.CustomerInfo.OpenId }}')" {% if item.CustomerInfo.HelperToken %} disabled {%end%}>
+                                    <i class="fa fa-home"></i>分配助手
+                                </button>
+                                <button class="btn m-b-xs btn-sm btn-info btn-addon" onclick="buy_group('{{ item.CustomerInfo.OpenId }}', '{{item.CustomerInfo.HelperToken}}')" {% if not item.CustomerInfo.HelperToken %} disabled {%end%}>
+                                    <i class="fa fa-home"></i>购买群
+                                </button>
+                            </td>
+                        </tr>
+                        {% end %}
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <nav class="text-center m-t-lg m-b-lg">
+                {% module Paginator(page_index, page_size, total_count) %}
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- / welcome -->
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="allocation_model" tabindex="-1" role="dialog" aria-labelledby="model_title"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="model_title_update">
+                    分配助手
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default m-t-md">
+                <div class="table-responsive">
+                    <table class="table table-striped b-t b-light">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>ID</th>
+                                <th>助手微信标识</th>
+                                <th>昵称</th>
+                            </tr>
+                        </thead>
+                        <tbody id="helper_list">
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="update_btn" onclick="sure_allocation_helper()">确定</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="buy_group_model" tabindex="-1" role="dialog" aria-labelledby="model_title"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">
+                    购买群
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default m-t-md">
+                <div class="table-responsive">
+                    <table class="table table-striped b-t b-light">
+                        <tr>
+                            <td>购买数量</td>
+                            <td><input type="text" name="buyCount" id="buyCount" value=""></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="sure_buy_count()">确定</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{% end %}
+
+
+{% block js_scripts %}
+<script type="text/javascript">
+
+    $(function () {
+    });
+
+    var currentOpenId = null;
+    /**
+     * 分配助手
+     */
+    function allocation_helper(openId) {
+        currentOpenId = openId;
+        // 请求数据
+        $.get('{{ reverse_url("helper_allocation") }}',
+            {
+                "id_list": ""
+            },
+            function (data) {
+                var jobj = JSON.parse(data);
+                var html = "";
+                if (jobj){
+                    jobj.forEach(function(value, index, array) {
+                        html += "<tr><td><input type='radio' name='helperUin' value='"+value.HelperUin+"'></td><td></td><td>"+value.HelperId+"</td><td>"+value.HelperUin+"</td><td>"+value.NickName+"</td></tr>";
+                    });
+                }
+                $("#helper_list").html(html);
+            });
+        $("#allocation_model").modal("show");
+    }
+    
+    function sure_allocation_helper() {
+        var helperUin = $('#helper_list input[name="helperUin"]:checked ').val();
+        if(!helperUin){
+            alert("请选择一个助手");
+            return false;
+        }
+        $.post('{{ reverse_url("helper_allocation") }}',
+            {
+                "open_id" : currentOpenId,
+                "helper_uin": helperUin
+            },
+            function (data) {
+                if (data.code === 1){
+                    $("#allocation_model").modal("hide");
+                    location.reload();
+                }else {
+                    alert("分配失败!");
+                }
+            });
+    }
+
+    // buy count
+    var openId = null;
+    var helperUin = null;
+    function buy_group(open_id, helper_uin) {
+        $("#buyCount").val("");
+        openId = open_id;
+        helperUin = helper_uin;
+        $("#buy_group_model").modal("show");
+    }
+
+    function sure_buy_count() {
+
+        alert("等待完成!");
+
+        var buyCount = $("#buyCount").val();
+        if (!buyCount || buyCount <= 0){
+            alert("请填写合理数量");
+            return false;
+        }
+
+        $.post('{{ reverse_url("customer_group_manager") }}',
+            {
+                "open_id" : openId,
+                "helper_uin": helperUin,
+                "buy_count": buyCount
+            },
+            function (data) {
+                if (data.code === 1){
+                    $("#buy_group_model").modal("hide");
+                    location.reload();
+                }else {
+                    alert("分配失败!");
+                }
+            });
+    }
+
+
+</script>
+{% end %}

@@ -1,0 +1,1 @@
+{'job': ['php', 'python', 'javascript', 'java'], 'age': '100', 'friends': {'tony': '100', 'jack': '20', 'shui': '29'}, 'house': ('beijing', 'shanghai', 'korea', 'japanese')}

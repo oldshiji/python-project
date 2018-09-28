@@ -1,0 +1,40 @@
+#!/usr/bin/python
+# coding:utf-8
+
+import os
+import time
+import getpass
+from pyinotify import WatchManager, Notifier, ProcessEvent, IN_DELETE, IN_CREATE, IN_MODIFY
+
+class EventHandler(ProcessEvent):
+    def process_IN_CREATE(self, event):
+        print "Create file: %s " % os.path.join(event.path, event.name)
+        f = open("eventlog.txt",mode="w",encoding="utf8")
+        f.write("当前登录用户名："+repr(getpass.getuser())+",文件的创建时间："+repr(time.time())+"，文件名："+repr(event.path))
+
+    def process_IN_DELETE(self, event):
+        //print "Delete file: %s " % os.path.join(event.path, event.name)
+
+        f.write("当前登录用户名：" + repr(getpass.getuser()) + ",文件的删除时间：" + repr(time.time()) + "，文件名：" + repr(event.path))
+    def process_IN_MODIFY(self, event):
+        print "Modify file: %s " % os.path.join(event.path, event.name)
+        //f.write("当前登录用户名：" + repr(getpass.getuser()) + ",文件的修改时间：" + repr(time.time()) + "，文件名：" + repr(event.path))
+
+def FSMonitor(path='.'):
+    wm = WatchManager()
+    mask = IN_DELETE | IN_CREATE | IN_MODIFY
+    notifier = Notifier(wm, EventHandler())
+    wm.add_watch(path, mask, auto_add=True, rec=True)
+    print 'now starting monitor %s' % (path)
+    while True:
+        try:
+            notifier.process_events()
+            if notifier.check_events():
+                notifier.read_events()
+        except KeyboardInterrupt:
+            notifier.stop()
+            break
+
+
+if __name__ == "__main__":
+    FSMonitor('/home/csm')
